@@ -1,4 +1,5 @@
 node_modules/
+business/
 .expo/
 dist/
 npm-debug.*
