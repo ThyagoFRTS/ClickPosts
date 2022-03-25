@@ -8,10 +8,9 @@ import Home from './src/screens/Home';
 </View>*/}
 export default function App() {
     return (
-        <>
-            <StatusBar style="auto" />
-            <Home />
-        </>
+
+        <Home />
+
     );
 }
 
