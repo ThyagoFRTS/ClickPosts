@@ -11,5 +11,11 @@ export const theme = {
         light: '#b47cff',
         dark: '#3f1dcb',
     },
+    terciary: {
+        text: '#ffffff',
+        purple: '#9142FF',
+        pink: '#E335DC',
+        green: '#00D092',
+    },
     background: '#ffffff',
 }

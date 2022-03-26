@@ -8,16 +8,17 @@ export const Card = styled.View`
     height: ${Math.floor(Dimensions.get("window").height / 7)}px;
     background-color: white;
     border-radius: 16px;
-    margin: 12px;
+    margin: 20px;
     padding: 12px;
     border-width: 3px;
-    border-color: ${theme.secondary.dark};
+    border-color: ${theme.terciary.pink};
 `
 
 export const Title = styled.Text`
     text-align: center;
     font-size: 15px;
     font-weight: bold;
+    padding-left: 20px;
 `
 
 export const Body = styled.Text`
@@ -33,7 +34,7 @@ export const UserPicture = styled.View`
     background-color: ${theme.background};
     border-radius: 30px;
     border-width: 4px;
-    border-color: ${theme.primary.light};
+    border-color: ${theme.terciary.green};
     z-index: 1;
     position: absolute;
     left: -20px;

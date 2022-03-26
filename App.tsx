@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './src/screens/Home';
+import { Provider } from 'react-redux'
+import store from './src/storage';
 
 {/*<View style={styles.container}>
     <Text>Open up App.tsx to start working on your app!</Text>
@@ -8,17 +10,9 @@ import Home from './src/screens/Home';
 </View>*/}
 export default function App() {
     return (
-
-        <Home />
+        <Provider store={store}>
+            <Home />
+        </Provider>
 
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
