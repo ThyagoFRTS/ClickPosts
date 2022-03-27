@@ -11,6 +11,7 @@ import Routes from './src/routes/Routes';
 export default function App() {
     const [fontsLoaded] = useFonts({
         'Handlee': require('./assets/fonts/Handlee-Regular.ttf'),
+        'Exo2': require('./assets/fonts/Exo2-VariableFont_wght.ttf'),
     })
     if (!fontsLoaded) {
         return <LoadingIndicator />

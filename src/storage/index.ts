@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import postsSlicer from './ducks/posts/postsSlicer';
+import usersSlice from './ducks/users/usersSlice';
 
 const store = configureStore({
     reducer: {
-        posts: postsSlicer
+        posts: postsSlicer,
+        users: usersSlice,
     }
 })
 

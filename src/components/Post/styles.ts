@@ -8,21 +8,37 @@ export const Container = styled.View`
     width: 100%;
 `
 
-export const Card = styled.TouchableOpacity`
+export const Card = styled.View`
     width: ${Math.floor(Dimensions.get("window").width * 3/ 4)}px;
     height: ${Math.floor(Dimensions.get("window").height / 7)}px;
     background-color: white;
     border-radius: 16px;
     margin: 20px;
     padding: 12px;
-    border-width: 3px;
+    border-width: 2px;
     border-color: ${theme.primary.light};
+`
+
+export const EditButton = styled.TouchableOpacity`
+    height: 60px;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: ${theme.primary.light};
+    border-radius: 30px;
+    border-width: 2px;
+    border-color: ${theme.primary.light};
+    z-index: 1;
+    position: absolute;
+    left: -20px;
+    top: -20px;
 `
 
 export const Title = styled.Text`
     text-align: center;
-    font-size: 15px;
-    font-weight: bold;
+    font-family: ${fonts.title};
+    font-size: 17px;
+    
     padding-left: 20px;
 `
 
@@ -36,15 +52,3 @@ export const Body = styled.Text`
     padding-left: 20px;
 `
 
-export const UserPicture = styled.View`
-    height: 60px;
-    width: 60px;
-    background-color: ${theme.background};
-    border-radius: 30px;
-    border-width: 4px;
-    border-color: ${theme.terciary.green};
-    z-index: 1;
-    position: absolute;
-    left: -20px;
-    top: -20px;
-`
