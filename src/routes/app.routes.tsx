@@ -1,13 +1,13 @@
 import React from 'react';
-import { theme } from '../global/theme';
 import IOIcon from 'react-native-vector-icons/Ionicons'
-import { createMaterialBottomTabNavigator, MaterialBottomTabNavigationOptions } from '@react-navigation/material-bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootBottomParamList, RootStackParamList } from '../global/types/navigation';
 import Home from '../screens/Home';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { switchColor } from '../utils/colors';
 import Users from '../screens/Users';
+import TabBarButton from '../components/TabBarButton';
+import AddPost from '../screens/AddPost';
 
 
 const BottonNavigation = createBottomTabNavigator<RootBottomParamList>();
@@ -19,6 +19,8 @@ export const MainRoutes: React.FC = () => {
     const barOptions = {
         tabBarShowLabel: false,
         headerShown: false,
+        tabBarHideOnKeyboard: true,
+        
     }
     return (
         <Navigator initialRouteName="Posts"
@@ -28,15 +30,15 @@ export const MainRoutes: React.FC = () => {
                 options={{ tabBarIcon: ({ focused }) => <IOIcon name="home" color={switchColor(focused)} size={26} /> }}
                 name="Posts" component={Home} />
             <Screen
-                name="AddPost" component={Home}
+                name="AddPost" component={AddPost}
                 options={
                     {
-                        tabBarIcon: ({ focused }) => {
-                            return <IOIcon 
+                        tabBarIcon: () => {
+                            return <TabBarButton 
                                 name="add-circle-sharp"
-                                color={switchColor(focused)}
-                                size={26} />
+                                focused />
                         }
+                        
                     }
                 }
             />
