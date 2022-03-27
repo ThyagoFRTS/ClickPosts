@@ -1,29 +1,48 @@
 import React from 'react';
 import { theme } from '../global/theme';
-import Icon from 'react-native-vector-icons/FontAwesome'
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import IOIcon from 'react-native-vector-icons/Ionicons'
+import { createMaterialBottomTabNavigator, MaterialBottomTabNavigationOptions } from '@react-navigation/material-bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootBottomParamList, RootStackParamList } from '../global/types/navigation';
 import Home from '../screens/Home';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { switchColor } from '../utils/colors';
+import Users from '../screens/Users';
 
-const BottonNavigation = createMaterialBottomTabNavigator<RootBottomParamList>();
-//const Stack = createNativeStackNavigator<RootStackParamList>();
+
+const BottonNavigation = createBottomTabNavigator<RootBottomParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
 
 const { Navigator, Screen } = BottonNavigation;
 export const MainRoutes: React.FC = () => {
+    const barOptions = {
+        tabBarShowLabel: false,
+        headerShown: false,
+    }
     return (
-        <Navigator labeled={false} initialRouteName="AddPhoto"
-            barStyle={{ backgroundColor: theme.background }}
+        <Navigator initialRouteName="Posts"
+            screenOptions={barOptions}
         >
             <Screen
-                options={{ tabBarIcon: ({ color }) => <Icon name="home" color={color} size={26} /> }}
-                name="Home" component={Home} />
+                options={{ tabBarIcon: ({ focused }) => <IOIcon name="home" color={switchColor(focused)} size={26} /> }}
+                name="Posts" component={Home} />
             <Screen
-                options={{ tabBarIcon: ({ color }) => <Icon name="camera" color={color} size={26} /> }}
-                name="AddPhoto" component={Home} />
+                name="AddPost" component={Home}
+                options={
+                    {
+                        tabBarIcon: ({ focused }) => {
+                            return <IOIcon 
+                                name="add-circle-sharp"
+                                color={switchColor(focused)}
+                                size={26} />
+                        }
+                    }
+                }
+            />
             <Screen
-                options={{ tabBarIcon: ({ color }) => <Icon name="user" color={color} size={26} /> }}
-                name="Profile" component={Home} />
+                options={{ tabBarIcon: ({ focused }) => <IOIcon name="people" color={switchColor(focused)} size={26} /> }}
+                name="Users" component={Users} />
         </Navigator>
     );
 }
@@ -38,3 +57,4 @@ export const AuthRoutes: React.FC = () => {
     );
 }
 */
+

@@ -1,7 +1,7 @@
 export type RootBottomParamList = {
-    Home: undefined,
-    AddPhoto: undefined,
-    Profile: undefined,
+    Posts: undefined,
+    AddPost: undefined,
+    Users: undefined,
 }
 
 export type RootStackParamList = {

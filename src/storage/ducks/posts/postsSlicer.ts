@@ -1,4 +1,4 @@
-import { PostProps } from './../../../global/types/posts';
+import { PostProps } from '../../../global/types/post';
 import { AppDispatch } from './../../index';
 import { PostsState } from './types';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
@@ -9,10 +9,8 @@ const INITIAL_STATE: PostsState = {
     isLoading: true,
 }
 
-
-
 export const getPostsFromApi = () => async (dispatch: AppDispatch) => {
-    const posts = await api.get<PostsState>('/posts')
+    const posts = await api.get<PostProps[]>('/posts')
                     .then(response => response.data) as PostProps[]
     dispatch(setPosts({posts, isLoading: false}))
 }

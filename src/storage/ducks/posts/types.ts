@@ -1,4 +1,4 @@
-import { PostProps } from "../../../global/types/posts"
+import { PostProps } from "../../../global/types/post"
 
 export type PostsState = {
     posts: PostProps[],
