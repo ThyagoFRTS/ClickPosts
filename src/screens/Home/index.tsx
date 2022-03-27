@@ -10,11 +10,7 @@ import { Container } from './styles';
 const Home: React.FC = () => {
     const [search, setSearch] = useState('')
     const { isLoading } = useAppSelector(state => state.posts)
-    const dispatch = useAppDispatch()
-
-    useEffect(() => {
-        dispatch(getPostsFromApi())
-    }, [])
+    
     
     return (
         <Container>

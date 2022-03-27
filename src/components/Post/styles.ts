@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const Card = styled.View`
     width: ${Math.floor(Dimensions.get("window").width * 3/ 4)}px;
-    height: ${Math.floor(Dimensions.get("window").height / 7)}px;
+    height: ${Math.floor(Dimensions.get("window").height * 1.1 / 7)}px;
     border-radius: 16px;
     margin: 20px;
     padding: 12px;
@@ -34,21 +34,41 @@ export const EditButton = styled.TouchableOpacity`
     top: -20px;
 `
 
+export const TextContainer = styled.View`
+    flex: 1;
+`
+
 export const Title = styled.Text`
     text-align: center;
     font-family: ${fonts.title};
     font-size: 17px;
-    
     padding-left: 20px;
 `
 
 export const Body = styled.Text`
     text-align: center;
     font-size: 15px;
-    margin-top: 8px;
+    margin-top: 6px;
     flex: 1;
     font-family: ${fonts.main};
     text-align: center;
     padding-left: 20px;
+`
+/*
+
+position: absolute;
+right: 20px;
+bottom: 4px;
+*/
+export const UserContainer = styled.TouchableOpacity`
+    justify-content: center;
+    flex-direction: row;
+`
+
+export const Author = styled.Text`
+    text-align: center;
+    margin-left: 4px;
+    font-family: ${fonts.title};
+    font-size: 12px;
 `
 
