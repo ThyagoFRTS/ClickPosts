@@ -11,10 +11,10 @@ export const Container = styled.View`
 export const Card = styled.View`
     width: ${Math.floor(Dimensions.get("window").width * 3/ 4)}px;
     height: ${Math.floor(Dimensions.get("window").height / 7)}px;
-    background-color: white;
     border-radius: 16px;
     margin: 20px;
     padding: 12px;
+    background-color: white;
     border-width: 2px;
     border-color: ${theme.primary.light};
 `

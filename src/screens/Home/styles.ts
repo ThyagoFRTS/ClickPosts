@@ -4,7 +4,5 @@ import { theme } from "../../global/theme";
 
 export const Container = styled.View`
     flex: 1;
-    justify-content: center;
-    
-    background-color: #fff;
+    align-items: center;
 `

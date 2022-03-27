@@ -1,8 +1,9 @@
-import { PostProps } from '../../../global/types/post';
+import { PostProps } from './../../../global/types/post';
 import { AppDispatch } from './../../index';
 import { PostsState } from './types';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { api } from '../../../services/api';
+import { sortPosts } from '../../../utils/handleArrays';
 
 const INITIAL_STATE: PostsState = {
     posts: [],
@@ -12,6 +13,7 @@ const INITIAL_STATE: PostsState = {
 export const getPostsFromApi = () => async (dispatch: AppDispatch) => {
     const posts = await api.get<PostProps[]>('/posts')
                     .then(response => response.data) as PostProps[]
+    posts.sort(sortPosts)
     dispatch(setPosts({posts, isLoading: false}))
 }
 
@@ -23,6 +25,9 @@ const postsSlice = createSlice({
             state.posts = action.payload.posts
             state.isLoading = action.payload.isLoading
         },
+        addPost: (state, acation: PayloadAction<PostProps>) => {
+            
+        }
     },
 
 })

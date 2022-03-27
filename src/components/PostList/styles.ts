@@ -5,7 +5,9 @@ import {
 } from "react-native"
 
 
+//background-color: #fff;
 export const Posts = (styled.FlatList`
-    background-color: #fff;
+    flex: 1;
+    width: 100%;
     
 ` as unknown) as typeof FlatList
