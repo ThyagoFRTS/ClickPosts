@@ -1,8 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
 import { useAppSelector } from '../../hooks/redux';
 import CardUser from '../CardUser';
-import Post from '../Post';
 import { CardList } from './styles';
 
 const CardUserList: React.FC = () => {
