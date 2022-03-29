@@ -9,7 +9,7 @@
     <a href = ""><img src="https://img.shields.io/badge/Done%20for%20Intership-9966FF?&style=for-the-badge"></a>
 </p>
 <p align="center">
-    See <a href = "./releases/ClickPosts-v1.0.apk">this link</a> to get application apk
+    See <a href = "./releases/ClickPosts-v1.apk">this link</a> to get application apk
 </p>
 <h2>Funcionalitties</h2>
 <ul>
