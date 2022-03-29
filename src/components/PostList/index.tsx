@@ -23,7 +23,7 @@ const PostList: React.FC<Props> = ({ search }) => {
                 )
             );
         }
-    }, [search]);
+    }, [search, posts]);
 
     return (
         <Posts

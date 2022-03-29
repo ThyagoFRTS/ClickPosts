@@ -5,16 +5,19 @@ export const Container = styled.ScrollView`
     flex: 1;
 `
 export const UserSelect = styled.Text`
+    color: black;
+    font-family: ${fonts.title};
+
+`
+
+export const UserSelectView = styled.TouchableOpacity`
     width: 90%;
     height: 50px;
-    text-align: center;
     padding-left: 20px;
     margin-top: 10px;
     border-radius: 5px;
-    color: black;
     margin-bottom: 16px;
     background-color: white;
-    font-family: ${fonts.title};
     justify-content: center;
     align-items: center;
 `

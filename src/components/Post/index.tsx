@@ -46,7 +46,7 @@ const Post: React.FC<PostProps> = ({ title, body, userId }) => {
                 </TextContainer>
                 <UserContainer>
                     <IoIcon name="md-person" color={theme.primary.light} size={12}/>
-                    <Author>{user?.name}</Author>
+                    <Author>{user?.username}</Author>
                 </UserContainer>
             </Card>
         </Container>

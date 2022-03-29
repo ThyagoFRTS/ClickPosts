@@ -14,6 +14,15 @@ export const CenteredView = styled.View`
     flex: 1;
 `
 
+export const RowView = styled.View`
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+`
+
 export const Card = styled.View`
     width: ${Math.floor(Dimensions.get("window").width * 4 / 5)}px;
     height: ${Math.floor(Dimensions.get("window").height / 5)}px;
@@ -44,43 +53,41 @@ export const InitialLetterUser = styled.Text`
 `
 
 export const UserInfo = styled.View`
+    justify-content: space-around;
     flex: 1;
 `
 
 export const Name = styled.Text`
     text-align: center;
     font-family: ${fonts.title};
-    font-size: 18px;
-    margin-top: 16px;
-    margin-bottom: 4px;
+    margin-left: 4px;
 `
 
 export const Email = styled.Text`
     text-align: center;
-    font-size: 15px;
-    margin-top: 8px;
-    flex: 1;
-    font-family: ${fonts.main};
+    font-size: 12px;
+    font-family: ${fonts.title};
+    margin-left: 4px;
 `
 
 export const Company = styled.Text`
     font-size: 15px;
-    margin-top: 8px;
     font-family: ${fonts.title};
     text-align: center;
+    margin-left: 4px;
 `
 
 export const Website = styled.Text`
     text-align: center;
     font-size: 15px;
-    margin-top: 8px;
     font-family: ${fonts.main};
+    margin-left: 4px;
 `
 
 export const City = styled.Text`
     text-align: center;
     font-size: 15px;
-    margin-top: 8px;
     font-family: ${fonts.main};
+    margin-left: 4px;
 `
 
