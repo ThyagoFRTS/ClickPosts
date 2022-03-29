@@ -1,3 +1,4 @@
+import { action } from 'typesafe-actions';
 import { sortUsers } from './../../../utils/handleArrays';
 import { UserProps } from './../../../global/types/users';
 import { AppDispatch } from './../../index';

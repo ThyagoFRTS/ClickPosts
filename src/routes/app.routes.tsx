@@ -2,12 +2,13 @@ import React from 'react';
 import IOIcon from 'react-native-vector-icons/Ionicons'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootBottomParamList, RootStackParamList } from '../global/types/navigation';
-import Home from '../screens/Home';
+import Feed from '../screens/Feed';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { switchColor } from '../utils/colors';
 import Users from '../screens/Users';
 import TabBarButton from '../components/TabBarButton';
 import AddPost from '../screens/AddPost';
+import EditPost from '../screens/EditPost';
 
 
 const BottonNavigation = createBottomTabNavigator<RootBottomParamList>();
@@ -23,12 +24,12 @@ export const MainRoutes: React.FC = () => {
         
     }
     return (
-        <Navigator initialRouteName="Posts"
+        <Navigator initialRouteName="Feed"
             screenOptions={barOptions}
         >
             <Screen
                 options={{ tabBarIcon: ({ focused }) => <IOIcon name="home" color={switchColor(focused)} size={26} /> }}
-                name="Posts" component={Home} />
+                name="Feed" component={FeedRoutes} />
             <Screen
                 name="AddPost" component={AddPost}
                 options={
@@ -48,15 +49,15 @@ export const MainRoutes: React.FC = () => {
         </Navigator>
     );
 }
-/*
-export const AuthRoutes: React.FC = () => {
+
+export const FeedRoutes: React.FC = () => {
     const options = { headerShown: false }
     return (
         <Stack.Navigator screenOptions={options}>
-            <Stack.Screen name="Login" component={Login} />
-            <Stack.Screen name="Signup" component={Signup} />
+            <Stack.Screen name="Posts" component={Feed} />
+            <Stack.Screen name="EditPost" component={EditPost} />
         </Stack.Navigator>
     );
 }
-*/
+
 

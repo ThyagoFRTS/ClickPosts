@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font'
 import LoadingIndicator from './src/components/LoadingIndicator';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Routes from './src/routes/Routes';
+import EditPost from './src/screens/EditPost';
 {/*<View style={styles.container}>
     <Text>Open up App.tsx to start working on your app!</Text>
     <StatusBar style="auto" />

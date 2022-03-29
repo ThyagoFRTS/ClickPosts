@@ -28,12 +28,17 @@ export const createPost = (newPost: NewPost) => async (dispatch: AppDispatch) =>
     const headers = { 'Content-type': 'application/json; charset=UTF-8' };
     const post = await api.post<PostProps[]>('/posts', newPost, {headers})
         .then(response => response.data) as PostProps
-    console.log(post)
+    dispatch(addPost(post))
+}
+
+export const updatePost = (newPost: NewPost) => async (dispatch: AppDispatch) => {
+    const headers = { 'Content-type': 'application/json; charset=UTF-8' };
+    const post = await api.post<PostProps[]>('/posts', newPost, {headers})
+        .then(response => response.data) as PostProps
     dispatch(addPost(post))
 }
 
 export const deletePost = (itemId: number) => async (dispatch: AppDispatch) => {
-    const headers = { 'Content-type': 'application/json; charset=UTF-8' };
     const status = await api.delete<PostProps[]>(`/posts/${itemId}`)
         .then(response => response.status) as PostProps
     console.log(status)

@@ -16,7 +16,7 @@ const InputArea: React.FC<Props> = ({ value, setValue, overStyle, ...rest }) => 
             {...rest}
             multiline
             numberOfLines={5}
-            maxLength={100}
+            maxLength={200}
             textAlignVertical='top'
             value={value? value: ''}
             style={[overStyle]}

@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { getPostsFromApi } from '../storage/ducks/posts/postsSlicer';
 import { UsersState } from '../storage/ducks/users/types';
 import { getUsersFromApi } from '../storage/ducks/users/usersSlice';
-import { MainRoutes} from './app.routes';
+import { FeedRoutes, MainRoutes} from './app.routes';
 
 interface StateProps {
     users: UsersState;
@@ -25,6 +25,7 @@ const Routes: React.FC = () => {
     return (
         <NavigationContainer>
             <MainRoutes/>
+            
         </NavigationContainer>
     );
 }

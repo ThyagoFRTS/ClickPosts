@@ -15,9 +15,9 @@ import { addPost, createPost } from '../../storage/ducks/posts/postsSlicer';
 
 import { Container, HorizontalView, UserSelect, UserSelectView } from './styles';
 
-type Props = BottomTabScreenProps<RootBottomParamList, 'AddPost'>;
+type AddPostScreenProps = BottomTabScreenProps<RootBottomParamList, 'AddPost'>;
 
-const AddPost: React.FC<Props> = ({navigation}) => {
+const AddPost: React.FC<AddPostScreenProps> = ({navigation}) => {
     const [body, setBody] = useState<string>('')
     const [title, setTitle] = useState<string>('')
     const [search, setSearch] = useState('')
@@ -39,7 +39,7 @@ const AddPost: React.FC<Props> = ({navigation}) => {
         dispatch(createPost(
             { title: title, body: body, userId: user.id }
         ))
-        navigation.navigate('Posts')
+        navigation.navigate("Feed")
     }
 
     return (

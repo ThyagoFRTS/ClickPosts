@@ -7,7 +7,7 @@ import { Container, Loading } from './styles';
 const LoadingIndicator: React.FC = () => {
     return (
         <Container>
-            <Loading  size="large" color={theme.terciary.pink}/>
+            <Loading  size="large" color={theme.primary.light}/>
         </Container>
         
     );
