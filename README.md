@@ -15,12 +15,7 @@
 <ul>
   <li>Create, delete, update and search posts</li>
   <li>Post id manager</li>
-  <li>Axios</li>
-  <li>Redux RTK</li>
-  <li>React Navigation</li>
-  <li>Styled Components</li>
-  <li>Vector Icons</li>
-  <li>Visual Studio</li>
+  <li>To list users</li>
 </ul>
 <h2>Technologies</h2>
 <ul>
