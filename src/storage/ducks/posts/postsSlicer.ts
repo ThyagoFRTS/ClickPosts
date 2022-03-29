@@ -13,6 +13,13 @@ type NewPost = {
     userId: number,
 }
 
+type PatchPost = {
+    title: string,
+    body: string,
+    userId: number,
+    id: number
+}
+
 const INITIAL_STATE: PostsState = {
     posts: [],
     isLoading: true,
@@ -40,19 +47,21 @@ export const createPost = (newPost: NewPost) => async (dispatch: AppDispatch) =>
     }
 }
 
-export const updatePost = (newPost: NewPost) => async (dispatch: AppDispatch) => {
+export const updatePost = (post: PatchPost ) => async (dispatch: AppDispatch) => {
     const headers = { 'Content-type': 'application/json; charset=UTF-8' };
-    const post = await api.post<PostProps[]>('/posts', newPost, { headers })
+    const updatedPost = await api.put<PatchPost>(`/posts/${post.id}`, post, { headers })
         .then(response => {
-            return response.data
-        }) as PostProps
-    dispatch(addPost(post))
+            
+            if (response.status == 200) {
+                return response.data
+            }
+        })
+    dispatch(putPost(post))
 }
 
 export const deletePost = (itemId: number) => async (dispatch: AppDispatch) => {
-    const status = await api.delete<PostProps[]>(`/posts/${itemId}`)
-        .then(response => response.status) as PostProps
-    console.log(status)
+    const status = await api.delete<number>(`/posts/${itemId}`)
+        .then(response => response.status)
     dispatch(removePost(itemId))
 }
 
@@ -69,15 +78,22 @@ const postsSlice = createSlice({
             state.lastPostIndex += 1
         },
         addPost: (state, action: PayloadAction<PostProps>) => {
-            console.log({ ...action.payload, id: state.lastPostIndex })
             state.posts = [{ ...action.payload, id: state.lastPostIndex }].concat(state.posts)
         },
         removePost: (state, action: PayloadAction<number>) => {
             state.posts = state.posts.filter((item) => item.id != action.payload)
+        },
+        putPost: (state, action: PayloadAction<PostProps>) => {    
+            state.posts = state.posts.map(item => {
+                if (item.id == action.payload.id){
+                    return action.payload   
+                }
+                return item
+            })
         }
     },
 
 })
 
-export const { setPosts, addPost, removePost, updateLastPostIndex } = postsSlice.actions;
+export const { setPosts, addPost, removePost, putPost, updateLastPostIndex } = postsSlice.actions;
 export default postsSlice.reducer
